@@ -1,0 +1,88 @@
+.post-title, .post-text, .post-date, .edit-link {
+    padding-left: 1%;
+}
+
+.navbar .brand {
+    padding: 15px;
+    margin-left: 0px !important;
+}
+
+.navbar .nav > li > a {
+    padding: 15px 15px !important;
+}
+
+.comments-count {
+    margin-top: 5px;
+}
+
+.comments-panel {
+    background-color: #EEEEEE;
+    padding-left: 1%;
+    border: 1px solid #E0E0E0;
+}
+
+.comment-form {
+        margin-top: 0px;
+}
+
+#id_name, #id_email, #id_url, textarea {
+        width: 50%;
+        margin-bottom: 0px;
+}
+
+.detail-prev {
+    padding-bottom: 5px;
+    display: block;
+    padding-left: 1%;
+}
+
+.exit {
+    padding-left: 30%;
+}
+
+.login-form {
+    //margin-left: 20%;
+    margin-top: 20px;
+}
+
+.btn-login {
+    //margin-left: 15%;
+    width: 100px !important;
+}
+
+.login-back {
+    //margin-left: 35%;
+}
+
+.btn-reg {
+    //margin-left: 15%;
+    width: 300px !important;
+}
+
+.error-message {
+    color: red;
+}
+
+.edit-link {
+    //margin-left: 10px;
+
+}
+
+.post-text {
+    margin-top: 10px;
+}
+
+.delete-post-btn {
+    margin-top: 5px;
+    margin-left: 1%;
+    margin-bottom: 10px;
+}
+
+.add-comment-btn {
+    margin-bottom: 5px;
+    margin-left: 1%;
+}
+
+.comment-content, .comment {
+    margin-left: 1%;
+}

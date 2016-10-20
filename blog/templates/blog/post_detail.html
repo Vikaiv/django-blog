@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h2 class="post-title">{{ post.title }}</h2>
+    {% if user.is_authenticated and post.author == request.user %}
+        <a class="edit-link" href="{% url 'blog:post_edit' pk=post.pk %}">Редактировать запись</a>
+    {% endif %}
+    <p class="post-text">{{ post.text }}</p>
+    <p class="post-date">{{ post.create_date }}</p>
+    {% if user.is_authenticated and post.author == request.user %}
+        <a class="btn btn-danger delete-post-btn" href="{% url 'blog:post_delete' pk=post.pk %}">Удалить</a>
+    {% endif %}
+    <a href="{% url 'blog:list' %}" class="detail-prev">Назад</a>
+
+    <hr>
+    <a class="btn btn-default add-comment-btn" href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Добавить комментарий</a>
+    {% for comment in post.comments.all %}
+        {% if user.is_authenticated %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.created_date }}
+            </div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text|linebreaks }}</p>
+            {% if post.author == request.user or comment.author == request.user %}
+                <a class="btn btn-danger btn-mini" href="{% url 'blog:comment_remove' pk=comment.pk %}">Удалить комментарий</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% empty %}
+        <p class="comment-content">Комментариев пока нет :(</p>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p class="error-message">{{ form.errors.password }}</p>
+    <p class="error-message">{{ form.errors.password2 }}</p>
+    <p class="error-message">{{ form.errors.username }}</p>
+
+        <form action="" method="post" class="login-form">
+            {% csrf_token %}
+             <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                    <td class="help-text">{{ form.username.help_text }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password1.label_tag }}</td>
+                    <td>{{ form.password1 }}</td>
+                    <td class="help-text">{{ form.password1.help_text }}</td>
+                </tr>
+                 <tr>
+                    <td>{{ form.password2.label_tag }}</td>
+                    <td>{{ form.password2 }}</td>
+                     <td class="help-text">{{ form.password2.help_text }}</td>
+                </tr>
+        </table>
+            <input type="submit" class="btn btn-primary btn-reg" value="Зарегистрироваться"/>
+        </form>
+        <a href="{% url 'blog:list' %}" class="login-back">Назад</a>
+
+
+{% endblock %}
+
+

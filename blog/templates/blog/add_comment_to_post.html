@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+    {% endif %}
+    <h1>Добавить комментарий</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Добавить</button>
+    </form>
+    <a href="{{ request.META.HTTP_REFERER }}">Назад</a>
+{% endblock %}
